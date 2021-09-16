@@ -1,2 +1,3 @@
-﻿  main.cpp
-  GAME2001-F2021.vcxproj -> C:\Users\Joshu\Desktop\GAME2001-F2021\Debug\GAME2001-F2021.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (GAME2001-F2021.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  MemoryAccess.cpp
+  GAME2001-F2021.vcxproj -> C:\Users\Joshu\Desktop\GAME2001-F2021\Debug\Week1.exe
