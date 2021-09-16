@@ -1,0 +1,18 @@
+﻿  Driver.cpp
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(144,2): error C2062: type 'void' unexpected
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(168): message : see reference to class template instantiation 'UnorderedArray<T>' being compiled
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(144,1): error C2238: unexpected token(s) preceding ';'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(147,9): error C2061: syntax error: identifier 'temp'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(147,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(147,1): warning C4183: 'memcpy': missing return type; assumed to be a member function returning 'int'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(150,2): error C2059: syntax error: 'delete'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(150,1): error C2238: unexpected token(s) preceding ';'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(153,11): error C2059: syntax error: '='
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(153,1): error C2238: unexpected token(s) preceding ';'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(154,7): error C2059: syntax error: '='
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(154,1): error C2238: unexpected token(s) preceding ';'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(156,12): error C2143: syntax error: missing ';' before '+='
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(156,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(156,1): error C2238: unexpected token(s) preceding ';'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(158,2): error C2059: syntax error: 'return'
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(158,1): error C2238: unexpected token(s) preceding ';'
