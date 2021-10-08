@@ -39,7 +39,7 @@ public:
 
 	// Deletion (2 ways)
 	// First way, removes the last item inserted into the array
-	void pop()
+	virtual void pop() const
 	{
 		if (m_numElements > 0)
 		{
@@ -47,7 +47,7 @@ public:
 		}
 	}
 	// Second way, remove the item given an index - almost brute-force execution -- Big O = O(N)
-	void remove(int index)
+	virtual void remove(int index) const
 	{
 		assert(m_array != nullptr);
 
@@ -94,27 +94,27 @@ public:
 	}
 
 	// Clear
-	void clear()
+	virtual void clear() const
 	{
 		m_numElements = 0; // Ignore/forgets all current items in the array
 	}
 	// Getters
-	int GetSize()
+	virtual int GetSize() const
 	{
 		return m_numElements;
 	}
-	int GetMaxSize()
+	virtual int GetMaxSize() const
 	{
 		return m_maxSize;
 	}
-	int GetGrowSize()
+	virtual int GetGrowSize() const
 	{
 		return m_growSize;
 	}
 
 	// Setters
 
-	int SetGrowSize(int val)
+	virtual int SetGrowSize(int val) const
 	{
 		assert(val >= 0);
 		m_growSize = val;

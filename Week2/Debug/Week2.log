@@ -1,11 +1,6 @@
 ﻿  Driver.cpp
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\OrderedArray.h(7,1): error C2955: 'BaseArray': use of class template requires template argument list
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\BaseArray.h(6): message : see declaration of 'BaseArray'
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\OrderedArray.h(159): message : see reference to class template instantiation 'OrderedArray<T>' being compiled
 C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(7,1): error C2955: 'OrderedArray': use of class template requires template argument list
 C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\OrderedArray.h(6): message : see declaration of 'OrderedArray'
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(113): message : see reference to class template instantiation 'UnorderedArray<T>' being compiled
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\Driver.cpp(15,16): error C2676: binary '[': 'OrderedArray<int>' does not define this operator or a conversion to a type acceptable to the predefined operator
+C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(114): message : see reference to class template instantiation 'UnorderedArray<T>' being compiled
 C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\Driver.cpp(18,23): error C2660: 'OrderedArray<int>::remove': function does not take 1 arguments
 C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\OrderedArray.h(110,15): message : see declaration of 'OrderedArray<int>::remove'
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\Driver.cpp(24,30): error C2676: binary '[': 'OrderedArray<int>' does not define this operator or a conversion to a type acceptable to the predefined operator

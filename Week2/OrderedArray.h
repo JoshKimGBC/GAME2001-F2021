@@ -3,11 +3,11 @@
 #include <cassert>
 
 template <class T>
-class OrderedArray : public BaseArray
+class OrderedArray : public BaseArray<T>
 {
 public:
 	// Constructor
-	OrderedArray(int size, int growBy = 1) :
+	OrderedArray(int size, int growBy = 2) :
 		m_array(NULL), m_maxSize(0), m_growSize(0), m_numElements(0)
 	{
 		if (size) // Is this a legal size fo an array?
@@ -113,6 +113,7 @@ public:
 	virtual int GetSize() const;
 	virtual int GetMaxSize() const;
 	virtual int GetGrowSize() const;
+	virtual int SetGrowSize() const;
 
 private:
 	// Private functions
