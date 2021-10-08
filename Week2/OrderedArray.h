@@ -1,8 +1,9 @@
 #pragma once
+#include "BaseArray.h"
 #include <cassert>
 
 template <class T>
-class OrderedArray
+class OrderedArray : public BaseArray
 {
 public:
 	// Constructor
@@ -28,6 +29,7 @@ public:
 			m_array = nullptr;
 		}
 	}
+
 	// Insertion -- Big-O = O(N)
 	void push(T val)
 	{
@@ -61,40 +63,6 @@ public:
 
 		// return i;
 	}
-	// Deletion (2 ways)
-	// First way, removes the last item inserted into the array
-	void pop()
-	{
-		if (m_numElements > 0)
-		{
-			m_numElements--; // Reduce the total number of elements by 1. Ignoring the last element.
-		}
-	}
-	// Second way, remove the item given an index - almost brute-force execution -- Big O = O(N)
-	void remove(int index)
-	{
-		assert(m_array != nullptr);
-
-		if (index >= m_numElements)
-		{
-			// Trying to remove something outside of the bounds of the array
-			return; // Maybe do some form of exception handling usually
-		}
-
-		for (int i = index; i < m_numElements; i++)
-		{
-			// Start at the index we want to remove. 
-
-			// Shift everything after index back by one.
-			if (i + 1 < m_numElements) // Confines the loop into the array
-			{
-				m_array[i] = m_array[i + 1];
-			}
-		}
-		m_numElements--;
-	}
-	// Searching
-	// Binary Search
 
 	int search(T searchKey)
 	{
@@ -105,7 +73,7 @@ public:
 		int upperBound = m_numElements - 1;
 		int current = 0;
 
-		while(1) // <-- Replaced with recursion
+		while (1) // <-- Replaced with recursion
 		{
 			current = (lowerBound + upperBound) >> 1; // Preview of bitwise operation. Divides by 2
 
@@ -138,39 +106,13 @@ public:
 		return -1; // Catch all return from danger because this is an infinite loop.
 	}
 
-	// Overloaded [](array notation) operator
-	T& operator[](int index)
-	{
-		assert(m_array != nullptr && index < m_numElements);
-		return m_array[index];
-	}
-
-	// Clear
-	void clear()
-	{
-		m_numElements = 0; // Ignore/forgets all current items in the array
-	}
-	// Getters
-	int GetSize()
-	{
-		return m_numElements;
-	}
-	int GetMaxSize()
-	{
-		return m_maxSize;
-	}
-	int GetGrowSize()
-	{
-		return m_growSize;
-	}
-
-	// Setters
-
-	int SetGrowSize(int val)
-	{
-		assert(val >= 0);
-		m_growSize = val;
-	}
+	// Inherited Functions
+	virtual void remove() const;
+	virtual void pop() const;
+	virtual void clear() const;
+	virtual int GetSize() const;
+	virtual int GetMaxSize() const;
+	virtual int GetGrowSize() const;
 
 private:
 	// Private functions
@@ -203,12 +145,15 @@ private:
 
 		return true;
 	}
-private:
-	//  Private Variables
+
+protected:
+	//  Protected Variables
 
 	T* m_array;			// Pointer to the beginning of the array
 
 	int m_maxSize;			 // Max size of the array
 	int m_growSize;		   	// Max size the array can grow through expansion
 	int m_numElements;		// Number of items currently in the array
+
+
 };
