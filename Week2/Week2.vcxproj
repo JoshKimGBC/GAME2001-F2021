@@ -142,6 +142,7 @@
     <ClCompile Include="Driver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="OrderedArray.h" />
     <ClInclude Include="UnorderedArray.h" />
   </ItemGroup>
   <ItemGroup>

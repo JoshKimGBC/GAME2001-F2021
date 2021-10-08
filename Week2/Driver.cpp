@@ -1,14 +1,15 @@
 #include <iostream>
 #include "UnorderedArray.h"
+#include "OrderedArray.h"
 
 int main()
 {
-	UnorderedArray<int> array(3);
+	OrderedArray<int> array(3);
 
 	array.push(3);
 	array.push(53);
 	array.push(83);
-	array.push(23); // Should expand here
+	array.push(23); // Should expand here		// 3 23 82
 	array.push(82); // Should also expand here
 
 	array[2] = 112;
@@ -16,7 +17,7 @@ int main()
 	array.pop();
 	array.remove(2);
 
-	std::cout << "Unordered array contents: ";
+	std::cout << "Ordered array contents: ";
 		
 	for (int i = 0; i < array.GetSize(); i++)
 	{
