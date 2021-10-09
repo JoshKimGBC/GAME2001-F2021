@@ -7,7 +7,10 @@ class OrderedArray : public BaseArray<T>
 {
 public:
 	// Constructor
-	OrderedArray(int size, int growBy = 2) : BaseArray<T>(size, growBy) {}
+	OrderedArray(int size, int growBy = 2) : BaseArray<T>(size, growBy) 
+	{
+		bool m_bAllowDuplication = false;
+	}
 
 
 	// Destructor
@@ -33,14 +36,16 @@ public:
 			{
 				break;
 			}
+			
 		}
 
 		// If there is an index value that is at a location in the array already, we break.
+
 		for (i = 0; i < this->m_numElements; i++)
 		{
-			if (this->m_array[i] = val)
+			if (val == this->m_array[i] && !m_bAllowDuplication)
 			{
-				break;
+				this->remove(i);
 			}
 		}
 
@@ -99,4 +104,12 @@ public:
 
 		return -1; // Catch all return from danger because this is an infinite loop.
 	}
+
+	void SetAllowDupe(bool _allowDupe)
+	{
+		m_bAllowDuplication = _allowDupe;
+	}
+
+	private:
+		bool m_bAllowDuplication;
 };

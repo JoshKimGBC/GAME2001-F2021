@@ -9,8 +9,16 @@ public:
 	BaseArray() = default;
 
 	BaseArray(int size, int growBy = 2) :
-		m_array(0), m_maxSize(0), m_growSize(0), m_numElements(0)
+		m_array(NULL), m_maxSize(0), m_growSize(0), m_numElements(0)
 	{
+		if (size) // Is this a legal size for an array? 
+		{
+			m_maxSize = size;
+			m_array = new T[m_maxSize]; // Dynamically allocating array to m_maxSize 
+			memset(m_array, 0, sizeof(T) * m_maxSize); // Explicitly set 0 to all elements in the array; 
+
+			m_growSize = ((growBy > 0) ? growBy : 0);
+		}
 	}
 
 	// Destructor
@@ -104,7 +112,6 @@ public:
 	{
 		assert(val >= 0);
 		m_growSize = val;
-		return val;
 	}
 	public:
 	// Yo this function is public straight up
