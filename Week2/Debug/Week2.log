@@ -1,6 +1,2 @@
 ﻿  Driver.cpp
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(7,1): error C2955: 'OrderedArray': use of class template requires template argument list
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\OrderedArray.h(6): message : see declaration of 'OrderedArray'
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\UnorderedArray.h(114): message : see reference to class template instantiation 'UnorderedArray<T>' being compiled
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\Driver.cpp(18,23): error C2660: 'OrderedArray<int>::remove': function does not take 1 arguments
-C:\Users\Joshu\Desktop\GAME2001-F2021\Week2\OrderedArray.h(110,15): message : see declaration of 'OrderedArray<int>::remove'
+  Week2.vcxproj -> C:\Users\Joshu\Desktop\GAME2001-F2021\Debug\Week2.exe

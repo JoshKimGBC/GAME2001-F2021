@@ -7,6 +7,8 @@ class OrderedArray : public BaseArray<T>
 {
 public:
 	// Constructor
+	// Default Constructor
+
 	OrderedArray(int size, int growBy = 2) :
 		m_array(NULL), m_maxSize(0), m_growSize(0), m_numElements(0)
 	{
@@ -45,6 +47,15 @@ public:
 		for (i = 0; i < m_numElements; i++)
 		{
 			if (m_array[i] > val)
+			{
+				break;
+			}
+		}
+
+		// If there is an index value that is at a location in the array already, we break.
+		for (i = 0; i < m_numElements; i++)
+		{
+			if (m_array[i] = val)
 			{
 				break;
 			}
@@ -105,15 +116,6 @@ public:
 
 		return -1; // Catch all return from danger because this is an infinite loop.
 	}
-
-	// Inherited Functions
-	virtual void remove() const;
-	virtual void pop() const;
-	virtual void clear() const;
-	virtual int GetSize() const;
-	virtual int GetMaxSize() const;
-	virtual int GetGrowSize() const;
-	virtual int SetGrowSize() const;
 
 private:
 	// Private functions

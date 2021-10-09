@@ -1,9 +1,9 @@
 #pragma once
-#include "OrderedArray.h"
+#include "BaseArray.h"
 #include <cassert>
 
 template <class T>
-class UnorderedArray : public OrderedArray<T>
+class UnorderedArray : public BaseArray<T>
 {
 public:
 	// Constructor
@@ -60,15 +60,6 @@ public:
 
 		return -1;
 	}
-
-	// Inherited Functions
-	virtual void remove() const;
-	virtual void pop() const;
-	virtual void clear() const;
-	virtual int GetSize() const;
-	virtual int GetMaxSize() const;
-	virtual int GetGrowSize() const;
-	virtual int SetGrowSize() const;
 
 private:
 	// Private functions

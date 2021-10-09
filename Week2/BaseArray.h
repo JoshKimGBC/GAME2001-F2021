@@ -6,6 +6,8 @@ class BaseArray
 {
 public:
 	// Constructor
+	BaseArray() = default;
+
 	BaseArray(int size, int growBy = 2) :
 		m_array(NULL), m_maxSize(0), m_growSize(0), m_numElements(0)
 	{
@@ -21,25 +23,9 @@ public:
 		}
 	}
 
-	// Insertion
-	// Fast Insertion for Unordered Array -- Big O is O(1)
-	void push(T val)
-	{
-		assert(m_array != nullptr); // Debugging purposes
-
-		if (m_numElements >= m_maxSize) // Check if the array has to expand to accommodate the new data
-		{
-			Expand();
-		}
-
-		// The array has space for a new value so it can be added to the array
-		m_array[m_numElements] = val;
-		m_numElements++;
-	}
-
 	// Deletion (2 ways)
 	// First way, removes the last item inserted into the array
-	virtual void pop() const
+	virtual void pop() 
 	{
 		if (m_numElements > 0)
 		{
@@ -47,7 +33,7 @@ public:
 		}
 	}
 	// Second way, remove the item given an index - almost brute-force execution -- Big O = O(N)
-	virtual void remove(int index) const
+	virtual void remove(int index) 
 	{
 		assert(m_array != nullptr);
 
@@ -94,30 +80,31 @@ public:
 	}
 
 	// Clear
-	virtual void clear() const
+	virtual void clear() 
 	{
 		m_numElements = 0; // Ignore/forgets all current items in the array
 	}
 	// Getters
-	virtual int GetSize() const
+	virtual int GetSize() 
 	{
 		return m_numElements;
 	}
-	virtual int GetMaxSize() const
+	virtual int GetMaxSize() 
 	{
 		return m_maxSize;
 	}
-	virtual int GetGrowSize() const
+	virtual int GetGrowSize() 
 	{
 		return m_growSize;
 	}
 
 	// Setters
 
-	virtual int SetGrowSize(int val) const
+	virtual int SetGrowSize(int val) 
 	{
 		assert(val >= 0);
 		m_growSize = val;
+		return val;
 	}
 
 private:

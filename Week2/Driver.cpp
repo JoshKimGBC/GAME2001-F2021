@@ -1,6 +1,7 @@
 #include <iostream>
 #include "UnorderedArray.h"
 #include "OrderedArray.h"
+#include "BaseArray.h"
 
 int main()
 {
@@ -12,10 +13,10 @@ int main()
 	OrderedArray.push(23); // Should expand here		// 3 23 82
 	OrderedArray.push(82); // Should also expand here
 
-	OrderedArray[2] = 112;
-
 	OrderedArray.pop();
-	OrderedArray.remove(2);
+
+	// OrderedArray[2] = 112;
+	// OrderedArray.remove(2);
 
 	std::cout << "Ordered array contents: ";
 		
