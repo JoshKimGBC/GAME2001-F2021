@@ -7,52 +7,35 @@ class UnorderedArray : public BaseArray<T>
 {
 public:
 	// Constructor
-	UnorderedArray(int size, int growBy = 2) :
-		m_array(NULL), m_maxSize(0), m_growSize(0), m_numElements(0)
-	{
-		if (size) // Is this a legal size for an array?
-		{
-			m_maxSize = size;
-			m_array = new T[m_maxSize]; // Dynamically allocating array to m_maxSize
-			memset(m_array, 0, sizeof(T) * m_maxSize); // Explicitly set 0 to all elements in the array;
-
-			m_growSize = ((growBy > 0) ? growBy : 0);
-		}
-	}
+	UnorderedArray(int size, int growBy = 2) : BaseArray<T>(size, growBy) {}
 
 	// Destructor
-	~UnorderedArray()
-	{
-		if (m_array != nullptr)
-		{
-			delete[] m_array;
-			m_array = nullptr;
-		}
-	}
+	~UnorderedArray() {}
+
 	// Insertion
 	// Fast Insertion for Unordered Array -- Big O is O(1)
 	void push(T val)
 	{
-		assert(m_array != nullptr); // Debugging purposes
+		assert(this->m_array != nullptr); // Debugging purposes
 
-		if (m_numElements >= m_maxSize) // Check if the array has to expand to accommodate the new data
+		if (this->m_numElements >= this->m_maxSize) // Check if the array has to expand to accommodate the new data
 		{
-			Expand();
+			this->Expand();
 		}
 
 		// The array has space for a new value so it can be added to the array
-		m_array[m_numElements] = val;
-		m_numElements++;
+		this->m_array[this->m_numElements] = val;
+		this->m_numElements++;
 	}
 	// Linear searching
 	int search(T val)
 	{
-		assert(m_array != nullptr);
+		assert(this->m_array != nullptr);
 
 		// Brute Force search
-		for (int i = 0; i < m_numElements; i++)
+		for (int i = 0; i < this->m_numElements; i++)
 		{
-			if (m_array[i] == val)
+			if (this->m_array[i] == val)
 			{
 				return i; // Return the index of where the item is located in the array
 			}
@@ -60,46 +43,4 @@ public:
 
 		return -1;
 	}
-
-private:
-	// Private functions
-
-		// Expansion
-	bool Expand()
-	{
-		if (m_growSize <= 0)
-		{
-			// LEAVE
-			return false;
-		}
-
-
-		// Create the new array if grow size is > 0
-		T* temp = new T[m_maxSize + m_growSize];
-		assert(temp != nullptr);
-
-		// Copy the contents of the original array into the new array
-		memcpy(temp, m_array, sizeof(T) * m_maxSize);
-
-		// After copy the contents in the new array, delete the old array
-		delete[] m_array;
-
-		// Clean up variable assignments
-		m_array = temp;
-		temp = nullptr;
-
-		m_maxSize += m_growSize;
-
-		return true;
-	}
-
-protected:
-	//  Protected Variables
-
-	T* m_array;			// Pointer to the beginning of the array
-
-	int m_maxSize;			 // Max size of the array
-	int m_growSize;		   	// Max size the array can grow through expansion
-	int m_numElements;		// Number of items currently in the array
-
 };

@@ -9,7 +9,7 @@ public:
 	BaseArray() = default;
 
 	BaseArray(int size, int growBy = 2) :
-		m_array(NULL), m_maxSize(0), m_growSize(0), m_numElements(0)
+		m_array(0), m_maxSize(0), m_growSize(0), m_numElements(0)
 	{
 	}
 
@@ -25,7 +25,7 @@ public:
 
 	// Deletion (2 ways)
 	// First way, removes the last item inserted into the array
-	virtual void pop() 
+	void pop()
 	{
 		if (m_numElements > 0)
 		{
@@ -33,7 +33,7 @@ public:
 		}
 	}
 	// Second way, remove the item given an index - almost brute-force execution -- Big O = O(N)
-	virtual void remove(int index) 
+	void remove(int index)
 	{
 		assert(m_array != nullptr);
 
@@ -80,37 +80,35 @@ public:
 	}
 
 	// Clear
-	virtual void clear() 
+	void clear()
 	{
 		m_numElements = 0; // Ignore/forgets all current items in the array
 	}
 	// Getters
-	virtual int GetSize() 
+	int GetSize()
 	{
 		return m_numElements;
 	}
-	virtual int GetMaxSize() 
+	int GetMaxSize()
 	{
 		return m_maxSize;
 	}
-	virtual int GetGrowSize() 
+	int GetGrowSize()
 	{
 		return m_growSize;
 	}
 
 	// Setters
 
-	virtual int SetGrowSize(int val) 
+	int SetGrowSize(int val)
 	{
 		assert(val >= 0);
 		m_growSize = val;
 		return val;
 	}
-
-private:
-	// Private functions
-
-		// Expansion
+	public:
+	// Yo this function is public straight up
+	// Expansion
 	bool Expand()
 	{
 		if (m_growSize <= 0)
@@ -138,8 +136,6 @@ private:
 
 		return true;
 	}
-protected:
-	//  Protected Variables
 
 	T* m_array;			// Pointer to the beginning of the array
 

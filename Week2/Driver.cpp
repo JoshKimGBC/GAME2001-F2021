@@ -5,21 +5,24 @@
 
 int main()
 {
-	OrderedArray<int> OrderedArray(3);
+	UnorderedArray<int> OrderedArray(4);
 
+	OrderedArray[0] = 1;
 	OrderedArray.push(3);
 	OrderedArray.push(53);
 	OrderedArray.push(83);
-	OrderedArray.push(23); // Should expand here		// 3 23 82
-	OrderedArray.push(82); // Should also expand here
+	// OrderedArray.push(23); // Should expand here		// 3 23 82
+	// OrderedArray.push(82); // Should also expand here
 
-	OrderedArray.pop();
-
-	// OrderedArray[2] = 112;
+	
 	// OrderedArray.remove(2);
 
+	// OrderedArray.pop();
+
+
+
 	std::cout << "Ordered array contents: ";
-		
+
 	for (int i = 0; i < OrderedArray.GetSize(); i++)
 	{
 		std::cout << OrderedArray[i] << " ";
